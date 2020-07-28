@@ -1,0 +1,19 @@
+{
+  "name": "announcements",
+  "version": "1.0.0",
+  "description": "Wep app for free ads",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xakepa/announcements.git"
+  },
+  "author": "Plamen Ivanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xakepa/announcements/issues"
+  },
+  "homepage": "https://github.com/xakepa/announcements#readme"
+}
