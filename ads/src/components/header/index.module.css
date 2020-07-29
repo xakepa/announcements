@@ -1,0 +1,15 @@
+.navi {
+    display: flex;
+    align-content: center;
+}
+
+.navigation {
+    font-size: 1.5em;
+    
+    width: 70%;
+    background-color: #0099CC;
+    margin: 2em auto;
+    height: 12vh;
+    position: fixed;
+    top: 0;
+}
