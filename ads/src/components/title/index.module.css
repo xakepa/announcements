@@ -1,0 +1,17 @@
+.title {
+    text-align: center;
+    margin: 0.5em;
+      }
+
+h2 {
+ margin-bottom: 0;
+}
+
+h3 {
+ margin-top: 0;
+}
+
+.span {
+    border-bottom: dotted #1f14c3;
+    color: green
+   } 

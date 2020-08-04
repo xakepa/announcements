@@ -1,0 +1,16 @@
+.form-control {
+    margin: 20px 65px;
+  }
+
+.input {
+    font-size: larger;
+    width: 270px;
+    border-color: gray;
+    background-color: transparent;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+
