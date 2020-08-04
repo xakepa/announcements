@@ -1,0 +1,37 @@
+.topnav {
+    font-family: 'Balsamiq Sans', cursive;
+    height: 52px;
+    background-color: #333;
+    float: none;
+    position: fixed;
+    left: 50%;
+    top: 2.5%;
+    z-index:1;
+    transform: translate(-50%, -50%);
+    width: 70%;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    color: #61DAFB;
+    border-bottom: 5px solid #61DAFB;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .topnav-right {
+    float: right;
+  }
