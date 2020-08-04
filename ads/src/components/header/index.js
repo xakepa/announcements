@@ -1,11 +1,11 @@
 import React from 'react'
 import getNavigation from '../../utils/navigation'
 import styles from './index.module.css'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 
     const links = getNavigation()
-    console.log(links);
 
     return (
         <nav className={styles.topnav}>
@@ -14,7 +14,7 @@ const Header = () => {
                 {
                     links.map((l, i) => {
                         if (i > 0) {
-                            return <a href={l.link} key={l.title} value={l.title} type="header">{l.title} </a>
+                            return <Link to={l.link} key={l.title} value={l.title} type="header">{l.title} </Link>
                         }
                     })
                 }
