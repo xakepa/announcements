@@ -11,31 +11,29 @@ import PageWrapper from '../../components/page-wrapper'
 const keyIcon = <FontAwesomeIcon icon={faKey} />
 const userIcon = <FontAwesomeIcon icon={faUser} />
 
-class RegisterPage extends React.Component {
+class LoginPage extends React.Component {
     state = {
         username: '',
         password: '',
-        rePassword: ''
+
     }
     render() {
-        const { username, password, rePassword } = this.state
+        const { username, password } = this.state
 
         return (
 
             <PageWrapper>
-                <form className={styles.register} onSubmit={this.handleSubmit}>
+                <form className={styles.login} onSubmit={this.handleSubmit}>
 
-                    <Title h2title="Регистрирай се безплатно"
-                        h3title="Вече сте регистрирани?" link="/login" linkValue="Впишете се сега" />
+                    <Title h2title="Моля въведете вашият email и парола"
+                        h3title="Нямате регистрация?" link="/register" linkValue="Регистрирайте се сега" />
 
                     <Input label={userIcon} type="email" placeHolder="Вашият email" />
                     <Input label={keyIcon} type="password" placeHolder="Парола" />
-                    <Input label={keyIcon} type="password" placeHolder="Парола (още веднъж)" />
-                    <SumbitButton title="Регистрирай се" />
+                    <SumbitButton title="Впиши се" />
 
                     <div className={styles.title}>
-                        <input type="checkbox" className={styles.checkbox} />
-                        <span><a className={styles.agreement} href="/agrement">Приемам условията за ползване и политиката за лични дани</a></span>
+                        <span><a className={styles.agreement} href="/agrement">Влизайки в профила си приемам общите условия на сайта.</a></span>
                     </div>
                 </form>
             </PageWrapper>
@@ -43,4 +41,4 @@ class RegisterPage extends React.Component {
     }
 }
 
-export default RegisterPage
+export default LoginPage
