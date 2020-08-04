@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <nav className={styles.topnav}>
-            <a href={links[0].link} key={links[0].title} value={links[0].title} type="header">{links[0].title} </a>
+            <Link to={links[0].link} key={links[0].title} value={links[0].title} type="header">{links[0].title} </Link>
             <div className={styles['topnav-right']}>
                 {
                     links.map((l, i) => {
