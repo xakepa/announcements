@@ -1,0 +1,46 @@
+img {
+    height: 200px;
+    width: auto;
+}
+
+addimg {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ad {
+    display: inline-block;
+    border: 1px solid #2b415433;
+    background: white;
+    vertical-align: top;
+    margin: 12px;
+}
+
+.title:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 1px solid #2b415433;
+}
+
+.button {
+    border: none;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 35%;
+    margin: 12px;
+    border-radius: 4px;
+    background: green;
+    color: white;
+}

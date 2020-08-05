@@ -1,0 +1,47 @@
+input.difficulty {
+    width: 20%;
+}
+
+input.search {
+    width: 50%;
+}
+
+input {
+    
+}
+
+input[type=submit] {
+    background-color: #545775;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 50%;
+    margin: 5px 5px 5px 25%;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+input[type=submit]:hover {
+    background-color: #718F94;
+    cursor: pointer;
+}
+
+.form {
+    margin-top: 12em;
+    border-radius: 5px;
+    padding: 20px;
+    width: 36%;
+}
+
+.container {
+    margin: 0 2em;
+    border-radius: 15px;
+    padding: 2em;
+    position: relative;
+    top: 10em;
+    border: 3px solid orange;
+}

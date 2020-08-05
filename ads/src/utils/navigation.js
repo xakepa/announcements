@@ -7,11 +7,11 @@ const getNavigation = () => {
         },
         {
             title: 'Добави обява',
-            link: '/share'
+            link: '/create-ad'
         },
         {
             title: 'Профил',
-            // link: `/profile/${user && user.id}`
+            link: `/profile`
         },
         {
             title: 'Отпиши се',
@@ -34,7 +34,7 @@ const getNavigation = () => {
         },
     ]
 
-    return guestLinks
+    return authLinks
 }
 
 export default getNavigation;

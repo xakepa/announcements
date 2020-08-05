@@ -2,6 +2,7 @@ import React from 'react'
 import getNavigation from '../../utils/navigation'
 import styles from './index.module.css'
 import { Link } from 'react-router-dom'
+import Dropdown from '../dropdown-menu'
 
 const Header = () => {
 
@@ -13,11 +14,15 @@ const Header = () => {
             <div className={styles['topnav-right']}>
                 {
                     links.map((l, i) => {
-                        if (i > 0) {
+                        if (l.title === 'Профил') {
+                            return <Dropdown key="dropdown" />
+                        }
+                        else if (i > 0) {
                             return <Link to={l.link} key={l.title} value={l.title} type="header">{l.title} </Link>
                         }
                     })
                 }
+
             </div>
         </nav>
     )
