@@ -7,9 +7,14 @@ import Title from '../../components/title'
 
 
 const CreateAd = () => {
+
+    const handleSubmit = () => {
+
+    }
+
     return (
         <PageWrapper>
-            <form className={styles.create} onSubmit="{this.handleSubmit}">
+            <form className={styles.create} onSubmit={handleSubmit}>
 
                 <Title h2title="Добави нова обява" />
 
@@ -17,6 +22,13 @@ const CreateAd = () => {
                 <Input label="Категория" type="text" placeHolder="Категория на обявата" />
                 <Input label="Снимка" type="text" placeHolder="Добави линк към снимката" />
                 <Input label="Категория" type="text" placeHolder="Категория на обявата" />
+                <label for="ad-condition">Състояние:</label>
+
+                <select className={styles.option} required id="ad-condition">
+                    <option value="">--моля избери състояние на продукта--</option>
+                    <option value="Ново">Ново</option>
+                    <option value="Използвано">Използвано</option>
+                </select>
                 <label for="description">Описание...</label>
 
                 <textarea className={styles.textarea} id="description" name="description"

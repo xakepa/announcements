@@ -17,6 +17,10 @@ class RegisterPage extends React.Component {
         password: '',
         rePassword: ''
     }
+
+    handleSubmit = () => {
+
+    }
     render() {
         const { username, password, rePassword } = this.state
 

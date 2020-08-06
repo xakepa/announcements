@@ -3,9 +3,9 @@
     flex-flow: column nowrap;
     width: 40%;
     align-items: center;
-    background-color: #fff;
+    background-color: lavender;
     position: relative;
-   top: 55%;
+   top: 40%;
    left: 50%;
    transform: translate(-50%, -50%);
    border-radius: 20px;

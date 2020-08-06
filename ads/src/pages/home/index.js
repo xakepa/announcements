@@ -9,12 +9,12 @@ const Home = () => {
     return (
         <PageWrapper>
             <section className={styles.container}>
-                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="200 лв" />
-                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="200 лв" />
-                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="200 лв" />
-                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="200 лв" />
-                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="200 лв" />
-                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="200 лв" />
+                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="300 лв" />
+                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="300 лв" />
+                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="300 лв" />
+                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="300 лв" />
+                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="300 лв" />
+                <SingleAdd imgUrl={ps3} adTitle="Продавам PS3" price="300 лв" />
             </section>
         </PageWrapper>
     )

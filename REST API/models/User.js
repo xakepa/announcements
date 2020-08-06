@@ -19,7 +19,8 @@ const userSchema = new Schema({
         require: true
     },
 
-    userAds: [{ type: ObjectId, ref: "AdSchema" }]
+    userAds: [{ type: ObjectId, ref: "AdSchema" }],
+    userMessages: [{ type: ObjectId, ref: "AdSchema" }]
 
 });
 
