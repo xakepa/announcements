@@ -7,7 +7,7 @@ const getNavigation = () => {
         },
         {
             title: 'Добави обява',
-            link: '/create-ad'
+            link: '/create'
         },
         {
             title: 'Профил',

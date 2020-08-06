@@ -1,7 +1,7 @@
 .dropbtn {
     padding: 16px;
     font-size: 18px;
-    color: #fff;
+    color: #28B8D2;
     border: none;
     background-color: transparent;
   }
@@ -28,7 +28,8 @@
   }
   
   .dropdown-content a:hover {
-      background-color: #ddd;
+      background-color: rgb(117, 117, 117);
+      border: none;
     }
   
   .dropdown:hover .dropdown-content {display: block;}

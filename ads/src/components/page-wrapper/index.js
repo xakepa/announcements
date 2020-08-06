@@ -12,9 +12,9 @@ const mainStyle = {
 
 const PageWrapper = (props) => {
     return (
-        <div style={mainStyle}>
+        <div>
             <Header />
-            <main className={styles.main}>
+            <main style={mainStyle} className={styles.main}>
                 {props.children}
             </main>
             <Footer />

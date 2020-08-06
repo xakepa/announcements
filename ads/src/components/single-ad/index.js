@@ -8,7 +8,7 @@ const SingleAdd = ({ imgUrl, adTitle, altName, price }) => {
         <div className={styles.ad}>
             <img className={styles.ad} src={imgUrl} alt={altName} />
             <p className={styles.title}>{adTitle}</p>
-            <span>Цена:</span> {price}
+            <span className={styles.price}>Цена: {price}</span>
             <Link className={styles.button} to="/dynamic-content">Подробности</Link>
         </div>
     )

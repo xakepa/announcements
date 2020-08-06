@@ -7,6 +7,8 @@ import {
 import RegisterPage from './pages/register';
 import LoginPage from './pages/login';
 import Home from './pages/home'
+import CreateAd from './pages/create';
+
 
 const Navigation = () => {
     return (
@@ -15,6 +17,7 @@ const Navigation = () => {
                 <Route exact path='/' component={Home} />
                 <Route path='/register' component={RegisterPage} />
                 <Route path='/login' component={LoginPage} />
+                <Route path='/create' component={CreateAd} />
             </Switch>
         </BrowserRouter>
     )

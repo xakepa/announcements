@@ -6,10 +6,6 @@ input.search {
     width: 50%;
 }
 
-input {
-    
-}
-
 input[type=submit] {
     background-color: #545775;
     border: none;
@@ -42,5 +38,5 @@ input[type=submit]:hover {
     padding: 2em;
     position: relative;
     top: 10em;
-    border: 5px solid orange;
+    border: 5px solid white;
 }

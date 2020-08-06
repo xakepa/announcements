@@ -10,6 +10,23 @@ const Ads = new Schema({
         required: true
     },
 
+
+    price: {
+        type: Number,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: String,
+        required: true
+    },
     imageUrl: {
         type: String,
         required: false
@@ -19,11 +36,10 @@ const Ads = new Schema({
         type: String,
         required: true,
     },
-    price: {
+    phoneNumber: {
         type: Number,
         required: true
     },
-
     owner: {
         type: ObjectId,
         ref: "User"

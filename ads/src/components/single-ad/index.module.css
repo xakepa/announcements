@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
 img {
     height: 200px;
     width: auto;
@@ -12,13 +14,16 @@ addimg {
 .ad {
     display: inline-block;
     border: 1px solid #2b415433;
-    background: white;
+    background: whitesmoke;
     vertical-align: top;
     margin: 12px;
+    text-align: right;
 }
 
+/* rgba(196, 218, 251, 0.753) */
+
 .title:hover {
-    background: #4CAF50;
+    background: blue;
     color: white;
 }
 
@@ -33,6 +38,7 @@ addimg {
 
 .button {
     border: none;
+    font-family: 'Oswald', sans-serif;
     padding: 8px;
     text-align: center;
     text-decoration: none;
@@ -41,6 +47,16 @@ addimg {
     width: 35%;
     margin: 12px;
     border-radius: 4px;
-    background: green;
+    background: blue;
     color: white;
+}
+
+.button:hover {
+    background-color: rgba(29, 29, 255, 0.671);
+}
+
+.price {
+    display: inline-block;
+    margin-right: 2em;
+    font-size: 22px;
 }
