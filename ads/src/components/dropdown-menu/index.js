@@ -7,7 +7,7 @@ const Dropdown = () => {
         <div className={styles.dropdown}>
             <button className={styles.dropbtn}>Профил</button>
             <div className={styles['dropdown-content']}>
-                <Link to="/create-ad">Добави обява</Link>
+                <Link to="/create">Добави обява</Link>
                 <Link to="/myads">Моите обяви</Link>
                 <Link to="/profile">Моят профил</Link>
                 <Link to="/logout">Отпиши се</Link>
