@@ -1,9 +1,16 @@
-input.difficulty {
-    width: 20%;
+.search {
+    
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 2em;
+    margin-right: 2%;
+    width: 90%;
 }
 
-input.search {
-    width: 50%;
+.icon {
+    position: relative;
+    left: 37px;
 }
 
 input[type=submit] {
@@ -26,6 +33,8 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
+
+
 .form {
     margin-top: 12em;
     border-radius: 5px;
@@ -37,6 +46,10 @@ input[type=submit]:hover {
     margin: 0 2em;
     padding: 2em;
     position: relative;
-    top: 10em;
     border: 5px solid white;
+    margin-bottom: 5em;
+}
+
+.block {
+    padding-top: 30%;
 }

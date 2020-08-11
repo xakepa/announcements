@@ -12,6 +12,18 @@
    padding-bottom: 4em;
   }
 
+  .icon {
+      color: blue;
+  }
+
+  .container {
+    padding-top: 50%;
+  }
+
+  label {
+      display: block;
+  }
+
 .textarea {
     width: 80%;
     height: 20vh;

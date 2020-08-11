@@ -7,14 +7,14 @@ import Background from '../../images/milky-way.jpg'
 const mainStyle = {
     backgroundImage: `url(${Background})`,
     width: "100%",
-    'backgroundSize': 'cover'
+    'backgroundSize': 'cover no-repeat'
 }
 
 const PageWrapper = (props) => {
     return (
         <div>
             <Header />
-            <main style={mainStyle} className={styles.main}>
+            <main id="main" style={mainStyle} className={styles.main}>
                 {props.children}
             </main>
             <Footer />

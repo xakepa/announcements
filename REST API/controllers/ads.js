@@ -3,19 +3,32 @@ const models = require('../models');
 module.exports = {
     get: (req, res, next) => {
         const limitation = +req.query
-        models.Ads.find().limit(limitation).populate('author').lean()
+        models.Ads.find().limit(limitation).populate('user').lean()
             .then((ads) => res.send(ads))
             .catch(next);
     },
 
     post: (req, res, next) => {
-        const { description } = req.body;
-        const { _id } = req.user;
+        const { title, category, location, imageUrl, condition, description, phoneNumber, price } = req.body;
+        console.log(req.body);
+        //const { _id } = req.user;
+        const { _id } = req.body.user;
 
-        models.Ads.create({ description, author: _id })
+        models.Ads.create({
+            title,
+            category,
+            location,
+            imageUrl,
+            condition,
+            description,
+            phoneNumber,
+            price,
+            owner: _id,
+            createdAt: new Date().toString().slice(0, 24),
+        })
             .then((createdAd) => {
                 return Promise.all([
-                    models.User.updateOne({ _id }, { $push: { posts: createdAd } }),
+                    models.User.updateOne({ _id }, { $push: { userAds: createdAd } }),
                     models.Ads.findOne({ _id: createdAd._id })
                 ]);
             })

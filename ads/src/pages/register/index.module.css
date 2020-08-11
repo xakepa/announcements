@@ -5,11 +5,15 @@
     align-items: center;
     background-color: lavender;
     position: relative;
-   top: 45%;
+   top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
    border-radius: 20px;
    padding-bottom: 4em;
+  }
+
+  .container {
+    padding-top: 40%;
   }
 
 .fields {

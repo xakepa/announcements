@@ -8,7 +8,7 @@ import Title from '../../components/title'
 import PageWrapper from '../../components/page-wrapper'
 import authenticate from '../../utils/authenticate'
 import UserContext from '../../Context'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const keyIcon = <FontAwesomeIcon icon={faKey} />
@@ -51,29 +51,31 @@ class RegisterPage extends React.Component {
         return (
 
             <PageWrapper>
-                <form className={styles.register} onSubmit={this.handleSubmit}>
+                <div className={styles.container}>
+                    <form className={styles.register} onSubmit={this.handleSubmit}>
 
-                    <Title h2title="Регистрирай се безплатно"
-                        h3title="Вече сте регистрирани?" link="/login" linkValue="Впишете се сега" />
+                        <Title h2title="Регистрирай се безплатно"
+                            h3title="Вече сте регистрирани?" link="/login" linkValue="Впишете се сега" />
 
-                    <Input label={userIcon} value={email}
-                        onChange={(e) => { this.onChange(e, 'email') }}
-                        type="email" placeHolder="Вашият email" />
+                        <Input label={userIcon} value={email}
+                            onChange={(e) => { this.onChange(e, 'email') }}
+                            type="email" placeHolder="Вашият email" />
 
-                    <Input label={keyIcon} value={password}
-                        onChange={(e) => { this.onChange(e, 'password') }}
-                        type="password" placeHolder="Парола" />
+                        <Input label={keyIcon} value={password}
+                            onChange={(e) => { this.onChange(e, 'password') }}
+                            type="password" placeHolder="Парола" />
 
-                    <Input label={keyIcon} value={rePassword}
-                        onChange={(e) => { this.onChange(e, 'rePassword') }}
-                        type="password" placeHolder="Парола (още веднъж)" />
-                    <SumbitButton title="Регистрирай се" />
+                        <Input label={keyIcon} value={rePassword}
+                            onChange={(e) => { this.onChange(e, 'rePassword') }}
+                            type="password" placeHolder="Парола (още веднъж)" />
+                        <SumbitButton title="Регистрирай се" />
 
-                    <div className={styles.title}>
-                        <input type="checkbox" className={styles.checkbox} />
-                        <span><Link className={styles.agreement} to="/agrement">Приемам условията за ползване и политиката за лични дани</Link></span>
-                    </div>
-                </form>
+                        <div className={styles.title}>
+                            <input type="checkbox" className={styles.checkbox} />
+                            <span><Link className={styles.agreement} to="/agrement">Приемам условията за ползване и политиката за лични дани</Link></span>
+                        </div>
+                    </form>
+                </div>
             </PageWrapper>
         )
     }

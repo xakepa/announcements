@@ -10,26 +10,25 @@ const Ads = new Schema({
         required: true
     },
 
-
-    price: {
-        type: Number,
-        required: true
-    },
     category: {
-        type: String,
-        required: true
-    },
-    location: {
-        type: String,
-        required: true
-    },
-    createdAt: {
         type: String,
         required: true
     },
     imageUrl: {
         type: String,
         required: false
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    condition: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: String,
+        required: true
     },
 
     description: {
@@ -38,6 +37,10 @@ const Ads = new Schema({
     },
     phoneNumber: {
         type: Number,
+        required: true
+    },
+    price: {
+        type: String,
         required: true
     },
     owner: {
