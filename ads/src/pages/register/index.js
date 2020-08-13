@@ -31,22 +31,6 @@ class RegisterPage extends React.Component {
         newState[type] = event.target.value
 
         this.setState(newState)
-
-        if (this.state.password.length < 6) {
-            this.setState({
-                message: 'Паролата трябва да бъде не по-малко от 6 символа'
-            })
-
-        } else if (this.state.password !== this.state.rePassword) {
-            this.setState({
-                message: 'Паролите не съвпадат'
-            })
-        }
-        else if (this.state.password === this.state.rePassword) {
-            this.setState({
-                message: ''
-            })
-        }
     }
 
 
@@ -65,6 +49,25 @@ class RegisterPage extends React.Component {
         })
     }
 
+    blur = () => {
+        if (this.state.password.length < 6) {
+
+
+            this.setState({
+                message: 'Паролата трябва да бъде не по-малко от 6 символа'
+            })
+
+            // } else if (this.state.password !== this.state.rePassword) {
+            //     this.setState({
+            //         message: 'Паролите не съвпадат'
+            //     })
+        }
+        else {
+            this.setState({
+                message: ''
+            })
+        }
+    }
 
     render() {
         const { email, password, rePassword, message } = this.state
@@ -85,6 +88,7 @@ class RegisterPage extends React.Component {
 
                         <Input label={keyIcon} value={password}
                             onChange={(e) => { this.onChange(e, 'password') }}
+                            blur={this.blur}
                             type="password" placeHolder="Парола" />
 
                         <Input label={keyIcon} value={rePassword}
