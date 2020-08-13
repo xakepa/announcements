@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PageWrapper from '../../components/page-wrapper'
 import SingleAdv from '../../components/single-ad'
 import styles from './index.module.css'
@@ -42,8 +42,7 @@ class Home extends React.Component {
                         <span>{searchIcon} </span> <input className={styles.search} type="text" placeholder="Търси обяви.." />
                     </div>
                     <section className={styles.container}>
-                        <SingleAdv imgUrl={ps3} adTitle="Продавам PS3" price="300 лв" />
-                        <SingleAdv imgUrl={ps3} adTitle="Продавам PS3" price="300 лв" />
+
                         {this.renderAds()}
                     </section>
                 </div>

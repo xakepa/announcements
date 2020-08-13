@@ -4,7 +4,7 @@ module.exports = {
     get: (req, res, next) => {
         const limitation = +req.query
         models.Ads.find().limit(limitation).populate('user').lean()
-            .then((ads) => res.send(ads))
+            .then(ads => res.send(ads))
             .catch(next);
     },
 

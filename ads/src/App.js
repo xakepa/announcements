@@ -23,7 +23,6 @@ const App = (props) => {
 
   useEffect(() => {
     const token = getCookie('jwt-token')
-    console.log(token);
 
     if (!token) {
       logOut()
@@ -39,20 +38,20 @@ const App = (props) => {
         'Content-Type': 'application/json',
         'Authorization': token
       }
-    }).then(promise => {
-      console.log(promise)
-      return promise.json()
-    }).then(response => {
-      if (response.status) {
-        logIn({
-          username: response.user.username,
-          id: response.user._id
-        })
-      } else {
-        logOut()
-      }
-      setLoading(false)
-    })
+    }).then(promise => promise.json())
+      .then(response => {
+        console.log(response.user);
+        if (response.status) {
+          logIn({
+            username: response.user.username,
+            id: response.user._id
+          })
+        } else {
+          console.log('ERROR');
+          logOut()
+        }
+        setLoading(false)
+      })
   }, [])
 
   // if (loading) {

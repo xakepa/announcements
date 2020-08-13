@@ -45,6 +45,13 @@ class RegisterPage extends React.Component {
             console.log('Error', e)
         })
     }
+
+    validateEmail = () => {
+        if (this.state.email.length < 2) {
+            console.log('TOO SHORT');
+        }
+    }
+
     render() {
         const { email, password, rePassword } = this.state
 
@@ -59,6 +66,7 @@ class RegisterPage extends React.Component {
 
                         <Input label={userIcon} value={email}
                             onChange={(e) => { this.onChange(e, 'email') }}
+                            onBlur={this.validateEmail}
                             type="email" placeHolder="Вашият email" />
 
                         <Input label={keyIcon} value={password}

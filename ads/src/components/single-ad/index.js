@@ -9,7 +9,7 @@ const SingleAdv = ({ imgUrl, adTitle, altName, price, adId }) => {
         <div className={styles.ad}>
             <img className={styles.img} src={imgUrl} alt={altName} />
             <p className={styles.title}>{adTitle}</p>
-            <span className={styles.price}>Цена: {price}</span>
+            <span className={styles.price}>Цена: {price} лв.</span>
             <Link className={styles.button} to={adId}>Подробности</Link>
         </div>
     )

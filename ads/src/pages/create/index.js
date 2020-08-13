@@ -37,7 +37,7 @@ const CreateAd = () => {
                 description,
                 phoneNumber,
                 price,
-                user: '5f2e7cf61d53050e100e7c09'
+                user: '5f34d3df765abb48b47d609f'
             }),
             headers: {
                 'Content-Type': 'application/json',
