@@ -62,7 +62,7 @@ const CreateAd = () => {
                     <Input label={imgIcon} value={imageUrl} onChange={e => setImageUrl(e.target.value)} placeHolder="Добави линк към снимката" />
                     <label htmlFor="ad-condition">Състояние:</label>
 
-                    <select className={styles.option} value={condition} onChange={e => setCondition(e.target.value)} required id="ad-condition">
+                    <select novalidate className={styles.option} value={condition} onChange={e => setCondition(e.target.value)} id="ad-condition">
                         <option value="">--моля избери състояние на продукта--</option>
                         <option value="Ново">Ново</option>
                         <option value="Използвано">Използвано</option>

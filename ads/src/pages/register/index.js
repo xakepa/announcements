@@ -57,10 +57,10 @@ class RegisterPage extends React.Component {
                 message: 'Паролата трябва да бъде не по-малко от 6 символа'
             })
 
-            // } else if (this.state.password !== this.state.rePassword) {
-            //     this.setState({
-            //         message: 'Паролите не съвпадат'
-            //     })
+        } else if (this.state.password !== this.state.rePassword) {
+            this.setState({
+                message: 'Паролите не съвпадат'
+            })
         }
         else {
             this.setState({

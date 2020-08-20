@@ -2,7 +2,6 @@ import React from 'react'
 import PageWrapper from '../../components/page-wrapper'
 import SingleAdv from '../../components/single-ad'
 import styles from './index.module.css'
-import ps3 from './PS3.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -30,7 +29,7 @@ class Home extends React.Component {
 
     renderAds = () => {
         const { ads } = this.state;
-        console.log(ads);
+
         return ads.map((singleAdv, i) => <SingleAdv adTitle={singleAdv.title} adId={singleAdv._id} imgUrl={singleAdv.imageUrl} key={singleAdv._id}  {...singleAdv} />)
     }
 
