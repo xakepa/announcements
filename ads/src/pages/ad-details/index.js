@@ -58,6 +58,8 @@ class Details extends React.Component {
                         <p>{conditionIcon} {condition || '-'}</p>
                         <p>{categoryIcon} {category}</p>
                         <p>{moneyIcon} {price} лева</p>
+                        <p>Дата на създаване:</p>
+                        <p>{createdAt}</p>
                     </aside>
                     <p className={styles.description}>{description}</p>
                 </div>
