@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
-img {
+.img {
+    width: 90%;
     height: 200px;
-    width: auto;
-}
-
-addimg {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+    vertical-align: top;
+    margin: 12px;
 }
 
 .ad {
@@ -17,7 +13,9 @@ addimg {
     background: whitesmoke;
     vertical-align: top;
     margin: 12px;
-    text-align: right;
+    text-align: center;
+    width: 366px;
+    height: 377px;
 }
 
 /* rgba(196, 218, 251, 0.753) */

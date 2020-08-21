@@ -4,9 +4,19 @@ module.exports = {
     get: (req, res, next) => {
         const limitation = +req.query
         models.Ads.find().limit(limitation).populate('user').lean()
-            .then((ads) => res.send(ads))
+            .then(ads => res.send(ads))
             .catch(next);
     },
+
+    getSingleAd: (req, res, next) => {
+        console.log();
+        console.log(req.query);
+
+        models.Ads.findById(req.query.id).lean()
+            .then(ad => res.send(ad))
+            .catch(next);
+    },
+
 
     post: (req, res, next) => {
         const { title, category, location, imageUrl, condition, description, phoneNumber, price } = req.body;

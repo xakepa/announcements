@@ -24,7 +24,7 @@ const Ads = new Schema({
     },
     condition: {
         type: String,
-        required: true
+        required: false
     },
     createdAt: {
         type: String,
@@ -40,7 +40,7 @@ const Ads = new Schema({
         required: true
     },
     price: {
-        type: String,
+        type: Number,
         required: true
     },
     owner: {

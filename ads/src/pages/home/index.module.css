@@ -8,6 +8,11 @@
     width: 90%;
 }
 
+.spinner {
+    height: 25vh;
+    text-align: center;
+}
+
 .icon {
     position: relative;
     left: 37px;
@@ -48,6 +53,15 @@ input[type=submit]:hover {
     position: relative;
     border: 5px solid white;
     margin-bottom: 5em;
+}
+
+.article {
+    margin: 0 2em;
+    padding: 2em;
+    position: relative;
+    border: 5px solid white;
+    margin-bottom: 5em;
+    text-align: center;
 }
 
 .block {

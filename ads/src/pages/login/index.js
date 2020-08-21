@@ -14,7 +14,7 @@ import { useHistory } from 'react-router-dom'
 const keyIcon = <FontAwesomeIcon icon={faKey} />
 const userIcon = <FontAwesomeIcon icon={faUser} />
 
-const LoginPage = (props) => {
+const LoginPage = () => {
     const [email, setUser] = useState('')
     const [password, setPassword] = useState('')
     const context = useContext(UserContext)
@@ -27,6 +27,8 @@ const LoginPage = (props) => {
             email, password
         }, (user) => {
             context.logIn(user)
+            context.user = user._id
+            console.log(context.user);
             history.push('/')
         }, (e) => {
             console.log('Error', e)

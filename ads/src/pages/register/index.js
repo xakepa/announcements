@@ -9,6 +9,8 @@ import PageWrapper from '../../components/page-wrapper'
 import authenticate from '../../utils/authenticate'
 import UserContext from '../../Context'
 import { Link } from 'react-router-dom'
+import ErrorMessage from '../../components/error-message'
+
 
 
 const keyIcon = <FontAwesomeIcon icon={faKey} />
@@ -18,7 +20,8 @@ class RegisterPage extends React.Component {
     state = {
         email: '',
         password: '',
-        rePassword: ''
+        rePassword: '',
+        message: ''
     }
 
     static contextType = UserContext
@@ -45,13 +48,35 @@ class RegisterPage extends React.Component {
             console.log('Error', e)
         })
     }
+
+    blur = () => {
+        if (this.state.password.length < 6) {
+
+
+            this.setState({
+                message: 'Паролата трябва да бъде не по-малко от 6 символа'
+            })
+
+        } else if (this.state.password !== this.state.rePassword) {
+            this.setState({
+                message: 'Паролите не съвпадат'
+            })
+        }
+        else {
+            this.setState({
+                message: ''
+            })
+        }
+    }
+
     render() {
-        const { email, password, rePassword } = this.state
+        const { email, password, rePassword, message } = this.state
 
         return (
 
             <PageWrapper>
                 <div className={styles.container}>
+                    {message ? (<ErrorMessage message={message} />) : null}
                     <form className={styles.register} onSubmit={this.handleSubmit}>
 
                         <Title h2title="Регистрирай се безплатно"
@@ -63,6 +88,7 @@ class RegisterPage extends React.Component {
 
                         <Input label={keyIcon} value={password}
                             onChange={(e) => { this.onChange(e, 'password') }}
+                            blur={this.blur}
                             type="password" placeHolder="Парола" />
 
                         <Input label={keyIcon} value={rePassword}

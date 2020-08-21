@@ -1,0 +1,44 @@
+.container {
+    margin: 0 2em;
+    padding: 6em;
+    position: relative;
+    margin-bottom: 5em;
+    height: 70vh;
+
+}
+
+.icon {
+    color: blue;
+}
+
+.title {
+    border-radius: 8px;
+    border: 1px solid;
+    padding: 10px;
+    background: rgb(240, 239, 239);
+}
+
+.aside {
+    float: right;
+    border: 1px solid;
+    height: 60vh;
+    width: 30%;
+    border-radius: 8px;
+    background: rgb(240, 239, 239);
+    padding-left: 40px;
+    font-size: 22px;
+}
+
+.img {
+    width: 65%;
+    border-radius: 8px;
+    height: 60vh;
+}
+
+.description {
+    font-size: 22px;
+    border: 1px solid;
+    padding: 10px;
+    background: rgb(240, 239, 239);
+    border-radius: 8px; 
+}

@@ -3,16 +3,16 @@ import styles from './index.module.css'
 import { Link } from 'react-router-dom'
 
 
-const SingleAdd = ({ imgUrl, adTitle, altName, price }) => {
+const SingleAdv = ({ imgUrl, adTitle, altName, price, adId }) => {
 
     return (
         <div className={styles.ad}>
-            <img className={styles.ad} src={imgUrl} alt={altName} />
+            <img className={styles.img} src={imgUrl} alt={altName} />
             <p className={styles.title}>{adTitle}</p>
-            <span className={styles.price}>Цена: {price}</span>
-            <Link className={styles.button} to="/dynamic-content">Подробности</Link>
+            <span className={styles.price}>Цена: {price} лв.</span>
+            <Link className={styles.button} to={`ads/${adId}`}>Подробности</Link>
         </div>
     )
 }
 
-export default SingleAdd
+export default SingleAdv

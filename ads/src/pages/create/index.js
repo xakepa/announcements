@@ -37,7 +37,7 @@ const CreateAd = () => {
                 description,
                 phoneNumber,
                 price,
-                user: '5f2e7cf61d53050e100e7c09'
+                user: '5f34d3df765abb48b47d609f'
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const CreateAd = () => {
                     <Input label={imgIcon} value={imageUrl} onChange={e => setImageUrl(e.target.value)} placeHolder="Добави линк към снимката" />
                     <label htmlFor="ad-condition">Състояние:</label>
 
-                    <select className={styles.option} value={condition} onChange={e => setCondition(e.target.value)} required id="ad-condition">
+                    <select novalidate className={styles.option} value={condition} onChange={e => setCondition(e.target.value)} id="ad-condition">
                         <option value="">--моля избери състояние на продукта--</option>
                         <option value="Ново">Ново</option>
                         <option value="Използвано">Използвано</option>
@@ -71,7 +71,7 @@ const CreateAd = () => {
 
                     <textarea className={styles.textarea} value={description} onChange={e => setDescription(e.target.value)} />
                     <Input label={phoneIcon} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} placeHolder="Телефон за контакти" />
-                    <Input label={moneyIcon} value={price} onChange={e => setPrice(e.target.value)} placeHolder="Цена" />
+                    <Input label={moneyIcon} value={price} onChange={e => setPrice(e.target.value)} placeHolder="Цена в лева" />
                     <SubmitButton onClick={handleSubmit} title="ДОБАВИ ОБЯВА" />
                 </form>
             </div>
