@@ -1,10 +1,14 @@
 .container {
     margin: 0 2em;
-    padding: 10em;
+    padding: 6em;
     position: relative;
     margin-bottom: 5em;
     height: 70vh;
-    border: 2px solid white;
+
+}
+
+.icon {
+    color: blue;
 }
 
 .title {
@@ -21,7 +25,8 @@
     width: 30%;
     border-radius: 8px;
     background: rgb(240, 239, 239);
-    text-align: center;
+    padding-left: 40px;
+    font-size: 22px;
 }
 
 .img {
@@ -34,5 +39,6 @@
     font-size: 22px;
     border: 1px solid;
     padding: 10px;
-    background: rgb(240, 239, 239);   
+    background: rgb(240, 239, 239);
+    border-radius: 8px; 
 }

@@ -71,7 +71,7 @@ const CreateAd = () => {
 
                     <textarea className={styles.textarea} value={description} onChange={e => setDescription(e.target.value)} />
                     <Input label={phoneIcon} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} placeHolder="Телефон за контакти" />
-                    <Input label={moneyIcon} value={price} onChange={e => setPrice(e.target.value)} placeHolder="Цена" />
+                    <Input label={moneyIcon} value={price} onChange={e => setPrice(e.target.value)} placeHolder="Цена в лева" />
                     <SubmitButton onClick={handleSubmit} title="ДОБАВИ ОБЯВА" />
                 </form>
             </div>

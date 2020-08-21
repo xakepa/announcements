@@ -24,7 +24,7 @@ const Ads = new Schema({
     },
     condition: {
         type: String,
-        required: true
+        required: false
     },
     createdAt: {
         type: String,

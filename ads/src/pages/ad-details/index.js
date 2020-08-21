@@ -3,6 +3,13 @@ import PageWrapper from '../../components/page-wrapper'
 import styles from './index.module.css'
 import nopic from '../../images/nopic.jpg'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAtom, faGripHorizontal, faPhoneSquare, faCoins, faLocationArrow } from '@fortawesome/free-solid-svg-icons'
+const categoryIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faGripHorizontal} />
+const phoneIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faPhoneSquare} />
+const moneyIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faCoins} />
+const locationIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faLocationArrow} />
+const conditionIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faAtom} />
 
 class Details extends React.Component {
 
@@ -33,6 +40,7 @@ class Details extends React.Component {
             imageUrl,
             description,
             createdAt,
+            category,
             location,
             phoneNumber,
             price,
@@ -45,9 +53,11 @@ class Details extends React.Component {
                     <h1 className={styles.title}>{title}</h1>
                     <img className={styles.img} src={imageUrl || nopic} alt={title} />
                     <aside className={styles.aside}>
-                        <p>Телефон за връзка: 0{phoneNumber}</p>
-                        <p>Местоположение: {location}</p>
-                        <p>Състояние: {condition || '-'}</p>
+                        <p>{phoneIcon} 0{phoneNumber}</p>
+                        <p>{locationIcon} {location}</p>
+                        <p>{conditionIcon} {condition || '-'}</p>
+                        <p>{categoryIcon} {category}</p>
+                        <p>{moneyIcon} {price} лева</p>
                     </aside>
                     <p className={styles.description}>{description}</p>
                 </div>

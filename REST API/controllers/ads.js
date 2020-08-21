@@ -8,6 +8,16 @@ module.exports = {
             .catch(next);
     },
 
+    getSingleAd: (req, res, next) => {
+        console.log();
+        console.log(req.query);
+
+        models.Ads.findById(req.query.id).lean()
+            .then(ad => res.send(ad))
+            .catch(next);
+    },
+
+
     post: (req, res, next) => {
         const { title, category, location, imageUrl, condition, description, phoneNumber, price } = req.body;
         console.log(req.body);
