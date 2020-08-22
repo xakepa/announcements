@@ -1,38 +1,42 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import getNavigation from '../../utils/navigation'
 import styles from './index.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Dropdown from '../dropdown-menu'
 import UserContext from '../../Context'
 
-class Header extends React.Component {
+const Header = () => {
 
-    static contextType = UserContext
+    const history = useHistory()
+    const context = useContext(UserContext)
+    const links = getNavigation(context.user)
 
-    render() {
-
-        const { user } = this.context
-        const links = getNavigation(user)
-
-        return (
-            <nav className={styles.topnav} >
-                <Link to={links[0].link} key={links[0].title} value={links[0].title} type="header">{links[0].title} </Link>
-                <div className={styles['topnav-right']}>
-                    {
-                        links.map((l, i) => {
-                            if (l.title === 'Профил') {
-                                return <Dropdown key="dropdown" />
-                            }
-                            else if (i > 0) {
-                                return <Link to={l.link} key={l.title} value={l.title} type="header">{l.title} </Link>
-                            }
-                        })
-                    }
-
-                </div>
-            </nav>
-        )
+    const logOut = () => {
+        context.logOut()
+        history.push('/')
     }
+
+    return (
+
+        <nav className={styles.topnav} >
+            <Link to={links[0].link} key={links[0].title} value={links[0].title}>{links[0].title} </Link>
+            <div className={styles['topnav-right']}>
+                {
+                    links.map((l, i) => {
+                        if (l.title === 'Профил') {
+                            return <Dropdown key="dropdown" />
+                        } else if (l.title === 'Отпиши се') {
+                            return <Link onClick={logOut} key={l.title} value={l.title}>{l.title} </Link>
+                        }
+                        else if (i > 0) {
+                            return <Link to={l.link} key={l.title} value={l.title}>{l.title} </Link>
+                        }
+                    })
+                }
+
+            </div>
+        </nav >
+    )
 }
 
 export default Header

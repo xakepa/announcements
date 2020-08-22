@@ -7,7 +7,8 @@ const Ads = new Schema({
 
     title: {
         type: String,
-        required: true
+        required: true,
+        maxlength: 28
     },
 
     category: {
@@ -44,7 +45,7 @@ const Ads = new Schema({
         required: true
     },
     owner: {
-        type: ObjectId,
+        type: String,
         ref: "User"
     },
 });

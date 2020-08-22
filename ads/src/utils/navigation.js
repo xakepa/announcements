@@ -15,7 +15,7 @@ const getNavigation = (user) => {
         },
         {
             title: 'Отпиши се',
-            link: '/logout'
+            link: ''
         }
     ]
 

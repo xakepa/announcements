@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import userContext from '../../Context'
 import PageWrapper from '../../components/page-wrapper'
 import styles from './index.module.css'
 import Input from '../../components/input'
 import SubmitButton from '../../components/button/submit-button'
 import Title from '../../components/title'
 import getCookie from '../../utils/cookie'
+import ErrorMessage from '../../components/error-message'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAd, faImage, faGripHorizontal, faPhoneSquare, faCoins, faLocationArrow } from '@fortawesome/free-solid-svg-icons'
+import UserContext from '../../Context'
+import { useHistory } from 'react-router-dom'
+
 const adIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faAd} />
 const imgIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faImage} />
 const categoryIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faGripHorizontal} />
@@ -16,6 +21,7 @@ const moneyIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faCoi
 const locationIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faLocationArrow} />
 
 const CreateAd = () => {
+    const context = useContext(UserContext)
     const [title, setTitle] = useState('')
     const [category, setCategory] = useState('')
     const [location, setLocation] = useState('')
@@ -23,9 +29,13 @@ const CreateAd = () => {
     const [condition, setCondition] = useState('')
     const [description, setDescription] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
+    const [message, setMessage] = useState('')
+    const history = useHistory()
     const [price, setPrice] = useState('')
 
-    const handleSubmit = async () => {
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         const promise = await fetch('http://localhost:8000/api/ads', {
             method: 'POST',
             body: JSON.stringify({
@@ -37,7 +47,7 @@ const CreateAd = () => {
                 description,
                 phoneNumber,
                 price,
-                user: '5f34d3df765abb48b47d609f'
+                user: context.user
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -45,24 +55,34 @@ const CreateAd = () => {
             }
         })
 
-        const data = await promise.json()
-        console.log(data);
+        //const data = await promise.json()
+        history.push('/')
+    }
+
+    const blur = () => {
+        if (title.length > 28) {
+            setMessage('Дължината на заглавието не трябва да превишава 28 символа')
+        }
+        else {
+            setMessage('')
+        }
     }
 
     return (
         <PageWrapper>
+            {message ? (<ErrorMessage message={message} />) : null}
             <div className={styles.container}>
                 <form className={styles.create}>
 
                     <Title h2title="Добави нова обява" />
 
-                    <Input label={adIcon} value={title} onChange={e => setTitle(e.target.value)} placeHolder="Заглавие на обявата" />
+                    <Input blur={blur} label={adIcon} value={title} onChange={e => setTitle(e.target.value)} placeHolder="Заглавие на обявата" />
                     <Input label={categoryIcon} value={category} onChange={e => setCategory(e.target.value)} placeHolder="Категория на обявата" />
                     <Input label={locationIcon} value={location} onChange={e => setLocation(e.target.value)} placeHolder="Местоположение" />
-                    <Input label={imgIcon} value={imageUrl} onChange={e => setImageUrl(e.target.value)} placeHolder="Добави линк към снимката" />
+                    <Input label={imgIcon} value={imageUrl} noValidate onChange={e => setImageUrl(e.target.value)} placeHolder="Добави линк към снимката" />
                     <label htmlFor="ad-condition">Състояние:</label>
 
-                    <select novalidate className={styles.option} value={condition} onChange={e => setCondition(e.target.value)} id="ad-condition">
+                    <select noValidate className={styles.option} value={condition} onChange={e => setCondition(e.target.value)} id="ad-condition">
                         <option value="">--моля избери състояние на продукта--</option>
                         <option value="Ново">Ново</option>
                         <option value="Използвано">Използвано</option>

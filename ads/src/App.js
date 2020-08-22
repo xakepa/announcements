@@ -4,7 +4,6 @@ import getCookie from './utils/cookie'
 
 const App = (props) => {
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
 
   const logIn = (user) => {
     setUser({
@@ -40,7 +39,7 @@ const App = (props) => {
       }
     }).then(promise => promise.json())
       .then(response => {
-        console.log(response.user);
+        console.log(response);
         if (response.status) {
           logIn({
             username: response.user.username,
@@ -50,17 +49,9 @@ const App = (props) => {
           console.log('ERROR');
           logOut()
         }
-        setLoading(false)
       })
   }, [])
 
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       Loading...
-  //     </div>
-  //   )
-  // }
 
   return (
     <UserContext.Provider value={{

@@ -3,8 +3,6 @@
     padding: 6em;
     position: relative;
     margin-bottom: 5em;
-    height: 70vh;
-
 }
 
 .icon {
@@ -42,3 +40,39 @@
     background: rgb(240, 239, 239);
     border-radius: 8px; 
 }
+
+
+.delete {
+        background-color: red;
+        font-size: 16px;
+        color: #fff;
+        padding: 2%;
+        width: 33%;
+        border-radius: 8px;
+        display: inline-block;
+        border:none;
+        margin-top: 2.5%;
+    }
+    
+.delete:hover{
+        border: none;
+        background-color: rgba(243, 11, 11, 0.63);
+    }
+
+.edit {
+        background-color: blue;
+        font-size: 16px;
+        color: #fff;
+        padding: 2%;
+        width: 33%;
+        margin: 5%;
+        border-radius: 8px;
+        display: inline-block;
+        border:none;
+        margin-top: 2.5%;
+    }
+    
+.edit:hover{
+        border: none;
+        background-color: rgba(0, 0, 255, 0.685);
+    }

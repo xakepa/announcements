@@ -1,6 +1,7 @@
 .container {
     position: relative;
     bottom: 20em;
+    top: 10em;
 }
 
 .notificationsMessage {

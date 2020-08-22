@@ -27,8 +27,9 @@ const LoginPage = () => {
             email, password
         }, (user) => {
             context.logIn(user)
-            context.user = user._id
-            console.log(context.user);
+            context.user = user.id
+            context.email = user.email
+
             history.push('/')
         }, (e) => {
             console.log('Error', e)

@@ -75,8 +75,8 @@ class RegisterPage extends React.Component {
         return (
 
             <PageWrapper>
+                {message ? (<ErrorMessage message={message} />) : null}
                 <div className={styles.container}>
-                    {message ? (<ErrorMessage message={message} />) : null}
                     <form className={styles.register} onSubmit={this.handleSubmit}>
 
                         <Title h2title="Регистрирай се безплатно"

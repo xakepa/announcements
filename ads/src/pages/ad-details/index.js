@@ -11,6 +11,7 @@ const moneyIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faCoi
 const locationIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faLocationArrow} />
 const conditionIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faAtom} />
 
+
 class Details extends React.Component {
 
     state = {
@@ -31,9 +32,9 @@ class Details extends React.Component {
         this.setState({
             ad: singleAd
         })
-
     }
 
+    deleteAdv = () => { }
 
     render() {
         const { title,
@@ -44,7 +45,7 @@ class Details extends React.Component {
             location,
             phoneNumber,
             price,
-            condition
+            condition,
         } = this.state.ad
 
         return (
@@ -60,6 +61,8 @@ class Details extends React.Component {
                         <p>{moneyIcon} {price} лева</p>
                         <p>Дата на създаване:</p>
                         <p>{createdAt}</p>
+                        <button className={styles.edit} type='submit' onClick={this.deleteAdv()} >Редактирай тази обява</button>
+                        <button className={styles.delete} type='submit' onClick={this.deleteAdv()} >Изтрий обявата</button>
                     </aside>
                     <p className={styles.description}>{description}</p>
                 </div>
