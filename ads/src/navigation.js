@@ -9,6 +9,7 @@ import LoginPage from './pages/login';
 import Home from './pages/home'
 import CreateAd from './pages/create';
 import Details from './pages/ad-details';
+import MyAds from './pages/my-ads';
 
 
 const Navigation = () => {
@@ -20,6 +21,7 @@ const Navigation = () => {
                 <Route path='/login' component={LoginPage} />
                 <Route path='/create' component={CreateAd} />
                 <Route path='/ads/:id' component={Details} />
+                <Route path='/myads' component={MyAds} />
             </Switch>
         </BrowserRouter>
     )

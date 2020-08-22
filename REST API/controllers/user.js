@@ -24,7 +24,7 @@ module.exports = {
         },
 
         verifyLogin: (req, res, next) => {
-            const token = req.headers.authorization || ''
+            const token = req.headers.authorization || '';
 
             Promise.all([
                 utils.jwt.verifyToken(token),
@@ -68,6 +68,7 @@ module.exports = {
                 })
                 .catch(next);
         },
+
 
         logout: (req, res, next) => {
             const token = req.cookies[config.authCookieName];

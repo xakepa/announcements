@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react'
-import userContext from '../../Context'
 import PageWrapper from '../../components/page-wrapper'
 import styles from './index.module.css'
 import Input from '../../components/input'
@@ -74,7 +73,7 @@ const CreateAd = () => {
             <div className={styles.container}>
                 <form className={styles.create}>
 
-                    <Title h2title="Добави нова обява" />
+                    <Title link="" h2title="Добави нова обява" />
 
                     <Input blur={blur} label={adIcon} value={title} onChange={e => setTitle(e.target.value)} placeHolder="Заглавие на обявата" />
                     <Input label={categoryIcon} value={category} onChange={e => setCategory(e.target.value)} placeHolder="Категория на обявата" />
