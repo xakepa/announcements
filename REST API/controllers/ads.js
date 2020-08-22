@@ -17,9 +17,10 @@ module.exports = {
             .catch(next);
     },
 
+
     post: (req, res, next) => {
         const { title, category, location, imageUrl, condition, description, phoneNumber, price, user } = req.body;
-        const id = user.id
+        const _id = user.id
 
         models.Ads.create({
             title,
@@ -30,12 +31,12 @@ module.exports = {
             description,
             phoneNumber,
             price,
-            owner: id,
+            owner: _id,
             createdAt: new Date().toString().slice(0, 24),
         })
             .then((createdAd) => {
                 return Promise.all([
-                    models.User.updateOne({ id }, { $push: { userAds: createdAd } }),
+                    models.User.updateOne({ _id }, { $push: { userAds: createdAd }, }, { upsert: true }),
                     models.Ads.findOne({ _id: createdAd._id })
                 ]);
             })
