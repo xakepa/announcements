@@ -33,6 +33,7 @@ const RegisterPage = () => {
         await authenticate('http://localhost:8000/api/user/register', {
             email, password, rePassword
         }, (user) => {
+            console.log(user);
             context.logIn(user)
             history.push('/')
         }, (e) => {
@@ -69,11 +70,11 @@ const RegisterPage = () => {
 
                     <Input label={keyIcon} value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        blur={blur}
                         type="password" placeHolder="Парола" />
 
                     <Input label={keyIcon} value={rePassword}
                         onChange={(e) => setRePassword(e.target.value)}
+                        blur={blur}
                         type="password" placeHolder="Парола (още веднъж)" />
                     <SumbitButton title="Регистрирай се" />
 

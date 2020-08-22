@@ -2,6 +2,7 @@ import React from 'react'
 import PageWrapper from '../../components/page-wrapper'
 import styles from './index.module.css'
 import nopic from '../../images/nopic.jpg'
+import UserContext from '../../Context'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAtom, faGripHorizontal, faPhoneSquare, faCoins, faLocationArrow } from '@fortawesome/free-solid-svg-icons'
@@ -15,8 +16,11 @@ const conditionIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={f
 class Details extends React.Component {
 
     state = {
-        ad: {}
+        ad: {},
+        owner: false
     }
+
+    static contextType = UserContext
 
     componentDidMount() {
         this.getAd(this.props.match.params.id)
@@ -28,7 +32,14 @@ class Details extends React.Component {
         const ads = await response.json()
         const singleAd = ads.find(ad => ad._id === id)
 
-        console.log(singleAd);
+        if (this.context.user) {
+            if (singleAd.owner === this.context.user.id) {
+                this.setState({
+                    owner: true
+                })
+            }
+        }
+
         this.setState({
             ad: singleAd
         })
@@ -61,8 +72,10 @@ class Details extends React.Component {
                         <p>{moneyIcon} {price} лева</p>
                         <p>Дата на създаване:</p>
                         <p>{createdAt}</p>
-                        <button className={styles.edit} type='submit' onClick={this.deleteAdv()} >Редактирай тази обява</button>
-                        <button className={styles.delete} type='submit' onClick={this.deleteAdv()} >Изтрий обявата</button>
+                        {this.state.owner ? (<div>
+                            <button className={styles.edit} type='submit' onClick={this.deleteAdv()} >Редактирай тази обява</button>
+                            <button className={styles.delete} type='submit' onClick={this.deleteAdv()} >Изтрий обявата</button>
+                        </div>) : null}
                     </aside>
                     <p className={styles.description}>{description}</p>
                 </div>

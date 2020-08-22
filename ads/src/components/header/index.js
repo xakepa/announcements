@@ -26,7 +26,7 @@ const Header = () => {
                         if (l.title === 'Профил') {
                             return <Dropdown key="dropdown" />
                         } else if (l.title === 'Отпиши се') {
-                            return <Link onClick={logOut} key={l.title} value={l.title}>{l.title} </Link>
+                            return <Link onClick={logOut} to='' key={l.title} value={l.title}>{l.title} </Link>
                         }
                         else if (i > 0) {
                             return <Link to={l.link} key={l.title} value={l.title}>{l.title} </Link>

@@ -23,7 +23,7 @@ const Dropdown = () => {
                 <Link to="/create">Добави обява</Link>
                 <Link to="/myads">Моите обяви</Link>
                 <Link to="/profile">Моят профил</Link>
-                <Link onClick={logOut}>Отпиши се</Link>
+                <Link to="" onClick={logOut}>Отпиши се</Link>
             </div>
             <p><i className={styles.down}></i></p>
         </div>
