@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
 import styles from './index.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faKey, faUser } from '@fortawesome/free-solid-svg-icons'
@@ -16,7 +17,7 @@ import ErrorMessage from '../../components/error-message'
 const keyIcon = <FontAwesomeIcon icon={faKey} />
 const userIcon = <FontAwesomeIcon icon={faUser} />
 
-const RegisterPage () => {
+const RegisterPage = () => {
 
     const context = useContext(UserContext)
     const history = useHistory()
@@ -26,23 +27,14 @@ const RegisterPage () => {
     const [message, setMessage] = useState('')
 
 
-    const onChange = (event, type) => {
-        const newState = {}
-        newState[type] = event.target.value
-
-        this.setState(newState)
-    }
-
-
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const { email, password, rePassword } = this.state
 
         await authenticate('http://localhost:8000/api/user/register', {
             email, password, rePassword
         }, (user) => {
-            this.context.logIn(user)
-            this.props.history.push('/')
+            context.logIn(user)
+            history.push('/')
         }, (e) => {
 
             console.log('Error', e)
@@ -50,22 +42,14 @@ const RegisterPage () => {
     }
 
     const blur = () => {
-        if (this.state.password.length < 6) {
+        if (password.length < 6) {
+            setMessage('Паролата трябва да бъде не по-малко от 6 символа')
 
-
-            this.setState({
-                message: 'Паролата трябва да бъде не по-малко от 6 символа'
-            })
-
-        } else if (this.state.password !== this.state.rePassword) {
-            this.setState({
-                message: 'Паролите не съвпадат'
-            })
+        } else if (password !== rePassword) {
+            setMessage('Паролите не съвпадат')
         }
         else {
-            this.setState({
-                message: ''
-            })
+            setMessage('')
         }
     }
 
