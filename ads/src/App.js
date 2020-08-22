@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import UserContext from './Context'
 import getCookie from './utils/cookie'
 
 const App = (props) => {
+
   const [user, setUser] = useState(null)
 
   const logIn = (user) => {
@@ -14,7 +15,6 @@ const App = (props) => {
 
   const logOut = () => {
     document.cookie = "jwt-token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
-
     setUser({
       loggedIn: false
     })
@@ -22,42 +22,36 @@ const App = (props) => {
 
   useEffect(() => {
     const token = getCookie('jwt-token')
-
     if (!token) {
       logOut()
       return
     }
 
     fetch('http://localhost:8000/api/user/verify', {
-      method: 'POST',
-      body: JSON.stringify({
-        token
-      }),
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': token
       }
-    }).then(promise => promise.json())
-      .then(response => {
-        console.log(response);
-        if (response.status) {
-          logIn({
-            username: response.user.username,
-            id: response.user._id
-          })
-        } else {
-          console.log('ERROR');
-          logOut()
-        }
-      })
+    }).then(promise => {
+      return promise.json()
+    }).then(response => {
+      if (response.status) {
+        logIn({
+          username: response.user.username,
+          id: response.user._id
+        })
+      } else {
+        logOut()
+      }
+    })
   }, [])
-
 
   return (
     <UserContext.Provider value={{
       user,
       logIn,
-      logOut
+      logOut,
     }}>
       {props.children}
     </UserContext.Provider>
