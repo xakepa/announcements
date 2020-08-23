@@ -65,5 +65,10 @@ input[type=submit]:hover {
 }
 
 .block {
-    padding-top: 30%;
+    padding-top: 38%;
+}
+
+.logo {
+    text-align: center;
+    padding-top: 130px;
 }

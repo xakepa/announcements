@@ -51,7 +51,7 @@ input[type=submit]:hover {
     margin: 0 2em;
     padding: 2em;
     position: relative;
-    border: 5px solid white;
+    border: 5px solid greenyellow;
     margin-bottom: 5em;
 }
 
@@ -64,6 +64,9 @@ input[type=submit]:hover {
     text-align: center;
 }
 
-.block {
-    padding-top: 30%;
+.title {
+    font-size: 36px;
+    text-align: center;
+    padding-top: 100px;
+    color: whitesmoke;
 }
