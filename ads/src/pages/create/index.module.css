@@ -1,6 +1,6 @@
 .create {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     width: 55%;
     align-items: center;
     background-color: rgb(240, 239, 239);
@@ -36,4 +36,8 @@
       height: 30px;
       border: 2px solid gray;
       border-radius: 6px;
+  }
+
+.info {
+    color: red;
   }

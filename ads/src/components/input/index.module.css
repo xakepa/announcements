@@ -1,10 +1,11 @@
 .form-control {
-    margin: 20px 65px;
+    margin: 20px 10px;
+    display: inline-block;
   }
 
 .input {
     font-size: larger;
-    width: 270px;
+    width: 300px;
     border-color: gray;
     background-color: transparent;
     border-top:none;
@@ -13,4 +14,6 @@
     outline: none;
 }
 
-
+.mandatory {
+  color: red;
+}
