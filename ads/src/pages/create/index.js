@@ -75,9 +75,9 @@ const CreateAd = () => {
 
                     <Title link="" h2title="Добави нова обява" />
 
-                    <Input blur={blur} label={adIcon} value={title} onChange={e => setTitle(e.target.value)} placeHolder="Заглавие на обявата" />
-                    <Input label={categoryIcon} value={category} onChange={e => setCategory(e.target.value)} placeHolder="Категория на обявата" />
-                    <Input label={locationIcon} value={location} onChange={e => setLocation(e.target.value)} placeHolder="Местоположение" />
+                    <Input blur={blur} label={adIcon} value={title} onChange={e => setTitle(e.target.value)} mandatory='*' placeHolder="Заглавие на обявата" />
+                    <Input label={categoryIcon} value={category} onChange={e => setCategory(e.target.value)} mandatory='*' placeHolder="Категория на обявата" />
+                    <Input label={locationIcon} value={location} onChange={e => setLocation(e.target.value)} mandatory='*' placeHolder="Местоположение" />
                     <Input label={imgIcon} value={imageUrl} noValidate onChange={e => setImageUrl(e.target.value)} placeHolder="Добави линк към снимката" />
                     <label htmlFor="ad-condition">Състояние:</label>
 
@@ -89,8 +89,9 @@ const CreateAd = () => {
                     <label htmlFor="description">Описание...</label>
 
                     <textarea className={styles.textarea} value={description} onChange={e => setDescription(e.target.value)} />
-                    <Input label={phoneIcon} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} placeHolder="Телефон за контакти" />
-                    <Input label={moneyIcon} value={price} onChange={e => setPrice(e.target.value)} placeHolder="Цена в лева" />
+                    <Input label={phoneIcon} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} mandatory='*' placeHolder="Телефон за контакти" />
+                    <Input label={moneyIcon} value={price} onChange={e => setPrice(e.target.value)} mandatory='*' placeHolder="Цена в лева" />
+                    <span className={styles.info}>Полетата маркирани със звезда * са задължителни</span>
                     <SubmitButton onClick={handleSubmit} title="ДОБАВИ ОБЯВА" />
                 </form>
             </div>

@@ -3,6 +3,7 @@ import PageWrapper from '../../components/page-wrapper'
 import styles from './index.module.css'
 import nopic from '../../images/nopic.jpg'
 import UserContext from '../../Context'
+import getCookie from '../../utils/cookie'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAtom, faGripHorizontal, faPhoneSquare, faCoins, faLocationArrow } from '@fortawesome/free-solid-svg-icons'
@@ -38,14 +39,36 @@ class Details extends React.Component {
                     owner: true
                 })
             }
+        } else {
+            this.props.history.push('/login')
         }
 
         this.setState({
             ad: singleAd
         })
     }
-
     deleteAdv = () => { }
+
+    //delete always!
+    // deleteAdv = () => {
+    //     const token = getCookie('jwt-token')
+    //     const id = this.props.match.params.id
+
+    //     fetch(`http://localhost:8000/api/ads/${id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Authorization': token,
+    //             'id': id
+    //         }
+    //     }).then(() => {
+
+    //     })
+    //         .catch(e => console.log(e))
+    // }
+
+
+    editAdv = () => { }
 
     render() {
         const { title,
@@ -73,8 +96,8 @@ class Details extends React.Component {
                         <p>Дата на създаване:</p>
                         <p>{createdAt}</p>
                         {this.state.owner ? (<div>
-                            <button className={styles.edit} type='submit' onClick={this.deleteAdv()} >Редактирай тази обява</button>
-                            <button className={styles.delete} type='submit' onClick={this.deleteAdv()} >Изтрий обявата</button>
+                            <button className={styles.edit} onClick={this.editAdv()} >Редактирай тази обява</button>
+                            <button className={styles.delete} onClick={this.deleteAdv()} >Изтрий обявата</button>
                         </div>) : null}
                     </aside>
                     <p className={styles.description}>{description}</p>

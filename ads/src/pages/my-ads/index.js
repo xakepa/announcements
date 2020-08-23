@@ -42,7 +42,7 @@ const MyAds = () => {
                 <div className={styles.block}>
                     <div className={styles.searchBar}>
                         <span>{searchIcon} </span> <input className={styles.search} type="text"
-                            placeholder="Търси обяви.." />
+                            placeholder="Търси в моите обяви.." />
                     </div>
                     <article className={styles.article}>
                         <img className={styles.spinner} src={Spinner} alt='spinner'></img>
@@ -54,11 +54,14 @@ const MyAds = () => {
 
     return (
         <PageWrapper>
+            <div className={styles.title} >
+                <h1 >МОИТЕ ОБЯВИ</h1>
+            </div>
             <div className={styles.block}>
                 <div className={styles.searchBar}>
                     <span>{searchIcon} </span> <input className={styles.search} type="text"
                         onChange={e => setSearch(e.target.value)}
-                        placeholder="Търси обяви.." />
+                        placeholder="Търси в моите обяви.." />
                 </div>
                 <section className={styles.container}>
                     {renderAds()}

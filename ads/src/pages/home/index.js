@@ -37,6 +37,10 @@ const Home = () => {
     if (loading) {
         return (
             <PageWrapper>
+                {/* <div className={styles.logo}>
+                    <img src={logo} alt='logo'>
+                    </img></div> */}
+
                 <div className={styles.block}>
                     <div className={styles.searchBar}>
                         <span>{searchIcon} </span> <input className={styles.search} type="text"
@@ -52,6 +56,9 @@ const Home = () => {
 
     return (
         <PageWrapper>
+            {/* <div className={styles.logo}>
+                <img src={logo} alt='logo'>
+                </img></div> */}
             <div className={styles.block}>
                 <div className={styles.searchBar}>
                     <span>{searchIcon} </span> <input className={styles.search} type="text"
