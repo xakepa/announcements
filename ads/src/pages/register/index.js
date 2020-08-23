@@ -42,7 +42,18 @@ const RegisterPage = () => {
         })
     }
 
+    const emailValidate = () => {
+        const emailValidator = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+        if (!(email.match(emailValidator))) {
+            setMessage('Грешен email. Всеки email трябва да съдържа име@домейн например ivan@mail.bg')
+        } else {
+            setMessage('')
+        }
+    }
+
     const blur = () => {
+
         if (password.length < 6) {
             setMessage('Паролата трябва да бъде не по-малко от 6 символа')
 
@@ -66,6 +77,7 @@ const RegisterPage = () => {
 
                     <Input label={userIcon} value={email}
                         onChange={(e) => setUser(e.target.value)}
+                        blur={emailValidate}
                         type="email" placeHolder="Вашият email" />
 
                     <Input label={keyIcon} value={password}
