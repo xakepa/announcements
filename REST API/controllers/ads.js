@@ -55,7 +55,8 @@ module.exports = {
     },
 
     delete: (req, res, next) => {
-        const id = req.params.id;
+        // const id = req.params.id;
+        const id = req.headers.id;
         models.Ads.deleteOne({ _id: id })
             .then((deleteAd) => res.send(deleteAd))
             .catch(next)

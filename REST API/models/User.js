@@ -16,7 +16,8 @@ const userSchema = new Schema({
 
     password: {
         type: String,
-        require: true
+        require: true,
+        minlength: 6
     },
 
     userAds: [{ type: ObjectId, ref: "Ads" }],
