@@ -1,0 +1,23 @@
+.footer {
+    background-color: #8C8C8C;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .footer li {
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .footer li a {
+    text-decoration: none;
+    color:#C8C8C8;
+    border-right: 1px solid #C8C8C8;
+    padding-right: 15px;
+    font-size: 16px;
+  }
+  
+  .footer li:last-child a {
+    border-right: none;
+  }

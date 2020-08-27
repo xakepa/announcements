@@ -1,0 +1,78 @@
+.container {
+    margin: 0 2em;
+    padding: 6em;
+    position: relative;
+    margin-bottom: 5em;
+}
+
+.icon {
+    color: blue;
+}
+
+.title {
+    border-radius: 8px;
+    border: 1px solid;
+    padding: 10px;
+    background: rgb(240, 239, 239);
+}
+
+.aside {
+    float: right;
+    border: 1px solid;
+    height: 60vh;
+    width: 30%;
+    border-radius: 8px;
+    background: rgb(240, 239, 239);
+    padding-left: 40px;
+    font-size: 22px;
+}
+
+.img {
+    width: 65%;
+    border-radius: 8px;
+    height: 60vh;
+}
+
+.description {
+    font-size: 22px;
+    border: 1px solid;
+    padding: 10px;
+    background: rgb(240, 239, 239);
+    border-radius: 8px; 
+}
+
+
+.delete {
+        background-color: red;
+        font-size: 16px;
+        color: #fff;
+        padding: 2%;
+        width: 33%;
+        border-radius: 8px;
+        display: inline-block;
+        border:none;
+        margin-top: 2.5%;
+    }
+    
+.delete:hover{
+        border: none;
+        background-color: rgba(243, 11, 11, 0.63);
+    }
+
+.edit {
+        background-color: blue;
+        font-size: 16px;
+        color: #fff;
+        padding: 2%;
+        width: 33%;
+        margin: 5%;
+        border-radius: 8px;
+        display: inline-block;
+        border:none;
+        margin-top: 2.5%;
+    }
+    
+.edit:hover{
+        border: none;
+        background-color: rgba(0, 0, 255, 0.685);
+    }

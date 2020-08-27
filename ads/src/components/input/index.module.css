@@ -1,0 +1,19 @@
+.form-control {
+    margin: 20px 10px;
+    display: inline-block;
+  }
+
+.input {
+    font-size: larger;
+    width: 300px;
+    border-color: gray;
+    background-color: transparent;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.mandatory {
+  color: red;
+}

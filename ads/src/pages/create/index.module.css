@@ -1,0 +1,43 @@
+.create {
+    display: flex;
+    flex-flow: column wrap;
+    width: 55%;
+    align-items: center;
+    background-color: rgb(240, 239, 239);
+    position: relative;
+   top: 55%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 20px;
+   padding-bottom: 4em;
+  }
+
+  .icon {
+      color: blue;
+  }
+
+  .container {
+    padding-top: 50%;
+  }
+
+  label {
+      display: block;
+  }
+
+.textarea {
+    width: 80%;
+    height: 20vh;
+    border-radius: 8px;
+    border: 2px solid green;
+  }
+
+  .option {
+      width: 50%;
+      height: 30px;
+      border: 2px solid gray;
+      border-radius: 6px;
+  }
+
+.info {
+    color: red;
+  }
