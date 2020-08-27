@@ -20,5 +20,8 @@
     },
     "scripts": {
         "start": "cd ./REST API && node index.js && cd ./ads && yarn start"
+    },
+    "engines": {
+        "node": "12.11"
     }
 }
