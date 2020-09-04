@@ -1,8 +1,11 @@
 require('dotenv').config()
 const config = require('./config/config');
 const dbConnection = require('./config/database');
+const express = require('./config/express');
 
-const app = require('express')();
+const app = require('express')()
+
+
 
 dbConnection().then(() => {
 
@@ -15,6 +18,10 @@ dbConnection().then(() => {
         res.status(500).send(err.message);
         console.log('*'.repeat(90))
     });
+
+    if (process.env.NODE_ENV === 'production') {
+        app.use(express.static('ads/build'))
+    }
 
     app.listen(config.port, console.log(`Listening on port ${config.port}!`))
 
