@@ -19,7 +19,7 @@
         "nodemon": "^2.0.4"
     },
 "scripts": {
-        "start": "cd REST\ API && node index.js",
+        "start": "cd REST API && node index.js",
         "build": "cd ads && npm build",
         "install-client": "cd ads && npm install",
         "heroku-postbuild": "npm run install-client && npm run build",
