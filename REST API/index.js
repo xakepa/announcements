@@ -19,10 +19,6 @@ dbConnection().then(() => {
         console.log('*'.repeat(90))
     });
 
-    if (process.env.NODE_ENV === 'production') {
-        app.use(express.static('ads/build'))
-    }
-
     app.listen(config.port, console.log(`Listening on port ${config.port}!`))
 
 }).catch(console.error);
