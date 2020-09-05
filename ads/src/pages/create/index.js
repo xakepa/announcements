@@ -31,11 +31,12 @@ const CreateAd = () => {
     const [message, setMessage] = useState('')
     const history = useHistory()
     const [price, setPrice] = useState('')
+    const fetchUri = `https://buybg.herokuapp.com`
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const promise = await fetch('http://localhost:8000/api/ads', {
+        const promise = await fetch(`${fetchUri}/api/ads`, {
             method: 'POST',
             body: JSON.stringify({
                 title,

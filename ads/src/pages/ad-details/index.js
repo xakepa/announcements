@@ -28,7 +28,7 @@ class Details extends React.Component {
     }
 
     getAd = async (id) => {
-        const response = await fetch(`${fetchUri}:8000/api/ads?id=${id}`)
+        const response = await fetch(`${fetchUri}/api/ads?id=${id}`)
 
         const ads = await response.json()
         const singleAd = ads.find(ad => ad._id === id)
