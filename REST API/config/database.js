@@ -1,8 +1,4 @@
 const mongoose = require('mongoose');
-<<<<<<< HEAD
-
-=======
->>>>>>> ae9f09851712e1c236c3b7ba7b5eff6a621aba39
 
 mongoose.set('useCreateIndex', true);
 
