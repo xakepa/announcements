@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import UserContext from './Context'
 import getCookie from './utils/cookie'
 
+const fetchUri = `https://buybg.herokuapp.com`
+
 const App = (props) => {
 
   const [user, setUser] = useState(null)
@@ -27,7 +29,7 @@ const App = (props) => {
       return
     }
 
-    fetch('http://localhost:8000/api/user/verify', {
+    fetch(`${fetchUri}/api/user/verify`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

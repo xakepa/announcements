@@ -13,6 +13,7 @@ import { useHistory } from 'react-router-dom'
 
 const keyIcon = <FontAwesomeIcon icon={faKey} />
 const userIcon = <FontAwesomeIcon icon={faUser} />
+const fetchUri = `https://buybg.herokuapp.com`
 
 const LoginPage = () => {
     const [email, setUser] = useState('')
@@ -23,7 +24,7 @@ const LoginPage = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        await authenticate('http://localhost:8000/api/user/login', {
+        await authenticate(`${fetchUri}/api/user/login`, {
             email, password
         }, (user) => {
             context.logIn(user)

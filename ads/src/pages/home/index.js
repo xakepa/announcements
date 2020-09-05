@@ -8,6 +8,7 @@ import noImage from '../../images/noimage.png'
 import Spinner from '../../images/gear3.gif'
 
 
+const fetchUri = `https://buybg.herokuapp.com`
 const searchIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faSearch} />
 
 
@@ -18,7 +19,7 @@ const Home = () => {
     const [search, setSearch] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/ads`)
+        fetch(`${fetchUri}/api/ads`)
             .then(res => res.json())
             .then(ads => {
                 setAds(ads)

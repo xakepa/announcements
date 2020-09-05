@@ -8,7 +8,7 @@ import noImage from '../../images/noimage.png'
 import Spinner from '../../images/gear3.gif'
 import UserContext from '../../Context'
 
-
+const fetchUri = `https://buybg.herokuapp.com`
 const searchIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faSearch} />
 
 
@@ -19,7 +19,7 @@ const MyAds = () => {
     const [search, setSearch] = useState('')
     const context = useContext(UserContext)
     useEffect(() => {
-        fetch(`http://localhost:8000/api/ads`)
+        fetch(`${fetchUri}/api/ads`)
             .then(res => res.json())
             .then(ads => {
                 const fileredAds = ads.filter(ad => ad.owner === context.user.id)

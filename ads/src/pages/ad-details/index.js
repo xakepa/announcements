@@ -12,7 +12,7 @@ const phoneIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faPho
 const moneyIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faCoins} />
 const locationIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faLocationArrow} />
 const conditionIcon = <FontAwesomeIcon className={styles.icon} size="lg" icon={faAtom} />
-
+const fetchUri = `https://buybg.herokuapp.com`
 
 class Details extends React.Component {
 
@@ -28,7 +28,7 @@ class Details extends React.Component {
     }
 
     getAd = async (id) => {
-        const response = await fetch(`http://localhost:8000/api/ads?id=${id}`)
+        const response = await fetch(`${fetchUri}:8000/api/ads?id=${id}`)
 
         const ads = await response.json()
         const singleAd = ads.find(ad => ad._id === id)
@@ -47,14 +47,12 @@ class Details extends React.Component {
             ad: singleAd
         })
     }
-    // deleteAdv = () => { }
 
-    //this func delete always!
     deleteAdv = () => {
         const token = getCookie('jwt-token')
         const id = this.props.match.params.id
 
-        fetch(`http://localhost:8000/api/ads/${id}`, {
+        fetch(`${fetchUri}/api/ads/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

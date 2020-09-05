@@ -16,6 +16,7 @@ import ErrorMessage from '../../components/error-message'
 
 const keyIcon = <FontAwesomeIcon icon={faKey} />
 const userIcon = <FontAwesomeIcon icon={faUser} />
+const fetchUri = `https://buybg.herokuapp.com`
 
 const RegisterPage = () => {
 
@@ -30,7 +31,7 @@ const RegisterPage = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        await authenticate('http://localhost:8000/api/user/register', {
+        await authenticate(`${fetchUri}/api/user/register`, {
             email, password, rePassword
         }, (user) => {
             console.log(user);
