@@ -1,9 +1,8 @@
 require('dotenv').config()
+const config = require('./config/config');
 const dbConnection = require('./config/database');
 
-const app = require('express')()
-
-
+const app = require('express')();
 
 dbConnection().then(() => {
 
@@ -17,6 +16,6 @@ dbConnection().then(() => {
         console.log('*'.repeat(90))
     });
 
-    app.listen(process.env.PORT || 8000, console.log(`Listening on port ${process.env.PORT}!`))
+    app.listen(config.port, console.log(`Listening on port ${config.port}!`))
 
 }).catch(console.error);

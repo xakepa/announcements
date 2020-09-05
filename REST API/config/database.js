@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const config = require('./config');
 
 mongoose.set('useCreateIndex', true);
 
 module.exports = () => {
-     return mongoose.createConnection(process.env.MONGODB_URI || 'mongodb+srv://admin:cacolucia@trips-4jw5l.mongodb.net/ads?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+    return mongoose.connect(config.dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
 };
