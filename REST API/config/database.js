@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-process.env.DB_URL = 'mongodb+srv://admin:cacolucia@trips-4jw5l.mongodb.net/ads?retryWrites=true&w=majority'
 
 mongoose.set('useCreateIndex', true);
 
